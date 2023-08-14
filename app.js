@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const bestMovies  = require('./controllers/bestMovies');
+app.use('/controller', bestMovies);
 const yoo  = require('./controllers/yoo');
 app.use('/controller', yoo);
 const userRoute = require('./routes/user');
